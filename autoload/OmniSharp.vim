@@ -627,7 +627,7 @@ function! s:find_solution_files() abort
     let dir = fnamemodify(dir, ':h')
   endwhile
 
-  if empty(solution_files) && g:OmniSharp_start_without_solution
+  if empty(solution_files) || g:OmniSharp_start_without_solution
     let solution_files = [getcwd()] " put absolute path here
   endif
 
